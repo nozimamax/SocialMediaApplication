@@ -2,6 +2,12 @@ syntax = "proto3";
 
 option go_package = "/genproto/user";
 
+service UserService{
+
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+
+  rpc Login (LoginRequest) returns (LoginResponse);
+}
 message RegisterRequest {
     string email = 1;
     string username = 2;
